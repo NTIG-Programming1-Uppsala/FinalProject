@@ -2,7 +2,7 @@ from cmu_graphics import *
 from variables import *
 from textwrap import fill
 from turtle import width
-from playsound import playsound
+
 import math
 from enemySpawn import *
 def pickup(item):
