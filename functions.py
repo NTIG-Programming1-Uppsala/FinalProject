@@ -4,7 +4,7 @@ from textwrap import fill
 from turtle import width
 from playsound import playsound
 import math
-
+from enemySpawn import *
 def pickup(item):
     if app.inventory < 5:
         item.centerX = blocks[app.blockindexselected].centerX
@@ -148,7 +148,10 @@ def jump():
 
 def makeDot(x,y,attr):
     c = Group()
-    c.target = attr
+    c.name = attr
+    c.behav = "passive"
+    c.timer = 100
+    c.active = False
     for i in range(10):
         a = Circle(x,y,1+i*4,fill="limeGreen",opacity=100-i*10)
         a.o_opacity = a.opacity
@@ -160,9 +163,6 @@ def makeDot(x,y,attr):
     enemies.append(c)
 
 ### ENEMY SPAWN
-
-makeDot(250,200,"enemy")
-makeDot(150,200,"enemy2")
 
 
 def onKeyPress(key):
@@ -294,7 +294,7 @@ def everyFrame():
     sonarMove()
     enemyUpdate()
     sonarDetect()
-
+    
     
     powersActive()
     
