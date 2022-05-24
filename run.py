@@ -28,9 +28,12 @@ for colour in colours:
     
     itemPickup()
 
-makeDot(250,200,"enemy1")
-#makeDot(150,200,"enemy")
 
-enemySpawn(270,200,"enemy1")
+#Makedot is a function that actually creates the monster
+makeDot(850,200,"enemy1")
+
+#adds an event that moves the monster to the player
+
+#enemySpawn(270,200,"enemy1")
 
 cmu_graphics.run()

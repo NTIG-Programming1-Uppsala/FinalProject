@@ -63,6 +63,8 @@ def enemyBehav():
                     enemy.timer = 100
                 elif enemy.behav == "passive":
                     enemy.centerY += 1
+                    
+                print(enemy.centerX,enemy.centerY,enemy.active)
                 
                     
                     

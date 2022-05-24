@@ -186,6 +186,9 @@ def onKeyPress(key):
         itemDrop()
     if key == "y":
         c = getZeroItem()
+
+    if key == "p":
+        enemySpawn(270,170,"enemy1")
         
     
         
@@ -245,24 +248,24 @@ def enemyUpdate():
 
 def hitButton(color):
     print(color)
-    for button in buttons:
-        if color == "red":
-            if ship.silent == True:
-                ship.silent = False
-                ship.silentHud.visible = False
-            elif ship.silent == False:
-                ship.silent = True
-                ship.silentHud.toFront()
-                ship.silentHud.visible = True
-            print(ship.silent)
+    
+    if color == "red":
+        if ship.silent == True:
+            ship.silent = False
+            ship.silentHud.visible = False
+        elif ship.silent == False:
+            ship.silent = True
+            ship.silentHud.toFront()
+            ship.silentHud.visible = True
+        print(ship.silent)
 
-        elif color == "yellow":
-            if app.sonar == True:
-                app.sonar = False
+    elif color == "yellow":
+        if app.sonar == True:
+            app.sonar = False
 
-            elif app.sonar == False:
-                app.sonar = True
-            print(app.sonar)
+        elif app.sonar == False:
+            app.sonar = True
+        print(app.sonar)
 
 
 def sonarMove():
