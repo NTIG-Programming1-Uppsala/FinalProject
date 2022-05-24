@@ -60,6 +60,7 @@ def enemyBehav():
 
                 if distance(enemy.centerX, enemy.centerY, 200,230) > 146:
                     enemy.active = False
+                    enemy.centerY = 500
                     enemy.timer = 100
                 elif enemy.behav == "passive":
                     enemy.centerY += 1
