@@ -25,6 +25,12 @@ def deathCond():
             Rect(0,0,400,400)
             Label("you died",200,200,size=20,fill="white")
             app.stop()
+
+def winCond():
+        if distance(win.centerX, win.centerY, player.centerX,player.centerY) < 100:
+            Rect(0,0,400,400)
+            Label("you survived!",200,200,size=20,fill="white")
+            app.stop()
     
     
 
@@ -182,6 +188,7 @@ def onKeyPress(key):
         
     if key == "r":
         startMenu(False)
+        enemySpawn(270,170,"enemy1")
     if key == "z":
         itemDrop()
     if key == "y":
@@ -199,19 +206,27 @@ def onKeyHold(keys):
     if "right" in keys:
         if player.dx < app.limit:
             player.dx += player.speed
+        if app.sonar:
+            print("distance from safehouse: ",distance(win.centerX, win.centerY, player.centerX, player.centerY))
             
     if "left" in keys:
         if player.dx > -app.limit:
             player.dx -= player.speed
+        if app.sonar:
+            print("distance from safehouse: ",distance(win.centerX, win.centerY, player.centerX, player.centerY))
         
     if "up" in keys:
         player.dy -= player.speed
+        if app.sonar:
+            print("distance from safehouse: ",distance(win.centerX, win.centerY, player.centerX, player.centerY))
     
     if "down" in keys:
-        
+        if app.sonar:
+            print("distance from safehouse: ",distance(win.centerX, win.centerY, player.centerX, player.centerY))
         player.dy += player.speed
     if "x" in keys:
         itemPickup()
+    
     
 def powersActive():
     
@@ -239,6 +254,8 @@ def enemyUpdate():
             for shape in enemy.children:
                 if shape.opacity > 1:
                     shape.opacity -= detect
+                else:
+                    shape.opacity = 0
         else:
             for shape in enemy.children:
                
@@ -304,6 +321,7 @@ def everyFrame():
     #print(player.dx, player.dy)
     app.counter3 += 1
     
+    
     if player.dy > 0:
         player.dy -= friction*player.dy
     elif player.dy < 0:
@@ -317,7 +335,7 @@ def everyFrame():
     enemyUpdate()
     sonarDetect()
     deathCond()
-    
+    winCond()
     powersActive()
     
     player.centerX += player.dx

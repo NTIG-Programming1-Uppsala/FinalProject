@@ -25,18 +25,18 @@ note.play()'''
 #https://stackoverflow.com/questions/20309456/call-a-function-from-another-file
 
 ###circular list!
-
+win = Circle(700,700,2)
 ### INSTRUCTIONS
 arrowinstr = Image("Images/metal_rusty.jpg",50,50)
-arrowinstr.width *= 0.1
-arrowinstr.height *= 0.1
+arrowinstr.width = 1
+arrowinstr.height = 1
 arrowinstr.centerX = 200
 arrowinstr.centerY = 260
 black = Rect(0,0,400,400)
 instr1 = Label("instructions",200,70,fill="white",size=30)
 instr2 = Label("Use A, D to switch between items",200,instr1.centerY+50,fill="white",size=20)
-instr3 = Label("W to use the item",200,instr1.centerY+70,fill="white",size=20)
-instr4 = Label("z to drop and x to pick up items",200,instr1.centerY+90,fill="white",size=15)
+instr3 = Label("W to use the item, use the console for info",200,instr1.centerY+70,fill="white",size=20)
+instr4 = Label("hint: yellow to disable sonar, arrow keys to move",200,instr1.centerY+90,fill="white",size=15)
 instr5 = Label("Press r to start",200,arrowinstr.bottom+10,fill="white",size=20)
 instructions = Group(black,instr1, instr2,instr3, instr4,instr5,arrowinstr)
 app.sonar = True

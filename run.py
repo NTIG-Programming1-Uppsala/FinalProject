@@ -18,8 +18,10 @@ for block in blocks:
 def onStep():
     everyFrame()
     enemyBehav()
+    enemyRandom()
+    
 
-startMenu(False)
+startMenu(True)
 
 for colour in colours:
     moveKey(player.centerX,player.centerY,colour)
@@ -35,5 +37,6 @@ makeDot(850,200,"enemy1")
 #adds an event that moves the monster to the player
 
 #enemySpawn(270,200,"enemy1")
+
 
 cmu_graphics.run()

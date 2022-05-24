@@ -7,13 +7,19 @@ from variables import *
 def enemySpawn(x,y,enemyName):
     for enemy in enemies:
         if enemy.name == enemyName:
+            enemy.timer = 100
             enemy.centerX = x
             enemy.centerY = y
             enemy.active = True
 
 # BEHAVIOUR
 
+#Randomspawn
 
+def enemyRandom():
+    if app.counter%400 == 0: #400
+        enemySpawn(randrange(130,250),150,"enemy1")
+        print("spawned")
 
 def enemyBehav():
 
@@ -65,7 +71,7 @@ def enemyBehav():
                 elif enemy.behav == "passive":
                     enemy.centerY += 1
                     
-                print(enemy.centerX,enemy.centerY,enemy.active)
+                
                 
                     
                     
