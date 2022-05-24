@@ -18,7 +18,13 @@ def pickup(item):
         
 
  
-            
+def deathCond():
+    for enemy in enemies:
+
+        if distance(enemy.centerX, enemy.centerY, 200,230) < 30:
+            Rect(0,0,400,400)
+            Label("you died",200,200,size=20,fill="white")
+            app.stop()
     
     
 
@@ -236,11 +242,33 @@ def enemyUpdate():
                 shape.opacity = 0
             
         
-        
+
+def hitButton(color):
+    print(color)
+    for button in buttons:
+        if color == "red":
+            if ship.silent == True:
+                ship.silent = False
+                ship.silentHud.visible = False
+            elif ship.silent == False:
+                ship.silent = True
+                ship.silentHud.toFront()
+                ship.silentHud.visible = True
+            print(ship.silent)
+
+        elif color == "yellow":
+            if app.sonar == True:
+                app.sonar = False
+
+            elif app.sonar == False:
+                app.sonar = True
+            print(app.sonar)
+
 
 def sonarMove():
-    speed = 5
-    sonarLine.rotateAngle += speed
+    if app.sonar:
+        speed = 5
+        sonarLine.rotateAngle += speed
 
 def sonarDetect():
     for enemy in enemies:
@@ -254,17 +282,8 @@ def sonarDetect():
 ship.silentHud = Rect(0,0,400,400,fill="black",opacity=100,visible=False)
 blackscreen = Rect(0,0,400,400,fill="black",opacity=50,visible=False)
 
-def hitButton(color):
-    for button in buttons:
-        if color == "red":
-            if ship.silent == True:
-                ship.silent = False
-                ship.silentHud.visible = False
-            elif ship.silent == False:
-                ship.silent = True
-                ship.silentHud.toFront()
-                ship.silentHud.visible = True
-            print(ship.silent)
+
+
 
 
 
@@ -294,7 +313,7 @@ def everyFrame():
     sonarMove()
     enemyUpdate()
     sonarDetect()
-    
+    deathCond()
     
     powersActive()
     

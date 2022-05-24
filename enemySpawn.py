@@ -40,7 +40,7 @@ def enemyBehav():
 
             if enemy.name == "enemy1":
                 if enemy.timer <= 0:
-                    if sonar:
+                    if app.sonar:
                         enemy.behav = "aggressive"
                         print("ATTACK")
                         enemySpeed = 5
@@ -54,7 +54,7 @@ def enemyBehav():
                             enemy.centerY -= enemySpeed
                         if enemy.centerY < 230:
                             enemy.centerY += enemySpeed
-                        print(enemy.centerX, enemy.centerY)
+                        #print(enemy.centerX, enemy.centerY)
                     
                 enemy.timer -= 1
 
