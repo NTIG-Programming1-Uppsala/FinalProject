@@ -19,7 +19,7 @@ def enemySpawn(x,y,enemyName):
 def enemyRandom():
     if app.counter%400 == 0: #400
         enemySpawn(randrange(130,250),150,"enemy1")
-        print("spawned")
+        #print("spawned")
 
 def enemyBehav():
 
