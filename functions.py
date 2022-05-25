@@ -182,7 +182,7 @@ def onKeyPress(key):
     if key == "a" or key == "d":
         itemMove(key)
     if key == "w":
-        itemUse(0)
+        #itemUse(0)
         itemRemove(0)
         
         

@@ -7,7 +7,7 @@ app.c.height *= 2
 app.c.right = 0
 
 def nearDeathAnimation():
-    print("1")
+    
     if app.c.yes:
         
         if app.c.left < 410:
@@ -17,7 +17,7 @@ def nearDeathAnimation():
             
 
 def nearDeathAnimationStart(bool):
-    print("2")
+    
     if bool == True:
         app.c.yes = True
     else:
