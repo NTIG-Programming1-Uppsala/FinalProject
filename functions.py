@@ -23,7 +23,7 @@ def deathCond():
 
         if distance(enemy.centerX, enemy.centerY, 200,230) < 30:
             Rect(0,0,400,400)
-            Label("you died",200,200,size=20,fill="white")
+            Label("you died, use the sonar to stay hidden(press the yellow button)",200,200,size=14,fill="white")
             app.stop()
 
 def winCond():
@@ -175,7 +175,7 @@ def makeDot(x,y,attr):
     enemies.append(c)
 
 ### ENEMY SPAWN
-
+app.startthing = 0
 
 def onKeyPress(key):
     
@@ -185,10 +185,14 @@ def onKeyPress(key):
         #itemUse(0)
         itemRemove(0)
         
-        
+
+
     if key == "r":
-        startMenu(False)
-        enemySpawn(270,170,"enemy1")
+        if app.startthing == 0:
+
+            startMenu(False)
+            enemySpawn(270,170,"enemy1")
+            app.startthing += 1
     if key == "z":
         itemDrop()
     if key == "y":

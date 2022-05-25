@@ -36,7 +36,7 @@ black = Rect(0,0,400,400)
 instr1 = Label("instructions",200,70,fill="white",size=30)
 instr2 = Label("Use A, D to switch between items",200,instr1.centerY+50,fill="white",size=20)
 instr3 = Label("W to use the item, use the console for info",200,instr1.centerY+70,fill="white",size=20)
-instr4 = Label("hint: yellow to disable sonar, arrow keys to move",200,instr1.centerY+90,fill="white",size=15)
+instr4 = Label("arrow keys to move",200,instr1.centerY+90,fill="white",size=15)
 instr5 = Label("Press r to start",200,arrowinstr.bottom+10,fill="white",size=20)
 instructions = Group(black,instr1, instr2,instr3, instr4,instr5,arrowinstr)
 app.sonar = True
