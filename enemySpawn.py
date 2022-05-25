@@ -1,7 +1,7 @@
 from cmu_graphics import *
 from functions import *
 from variables import *
-
+from animation import *
 
 
 def enemySpawn(x,y,enemyName):
@@ -19,6 +19,7 @@ def enemySpawn(x,y,enemyName):
 def enemyRandom():
     if app.counter%400 == 0: #400
         enemySpawn(randrange(130,250),150,"enemy1")
+        nearDeathAnimationStart(False)
         #print("spawned")
 
 def enemyBehav():
@@ -68,6 +69,7 @@ def enemyBehav():
                     enemy.active = False
                     enemy.centerY = 500
                     enemy.timer = 100
+                    nearDeathAnimationStart(True)
                 elif enemy.behav == "passive":
                     enemy.centerY += 1
                     

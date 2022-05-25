@@ -2,6 +2,7 @@ from textwrap import fill
 from turtle import width
 from cmu_graphics import *
 import math
+from animation import*
 
 from variables import *
 from functions import  *
@@ -15,10 +16,12 @@ for block in blocks:
 
 ###game start
 
+
 def onStep():
     everyFrame()
     enemyBehav()
     enemyRandom()
+    nearDeathAnimation()
     
 
 startMenu(True)
