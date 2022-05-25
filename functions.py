@@ -264,7 +264,7 @@ def enemyUpdate():
         
 
 def hitButton(color):
-    print(color)
+
     
     if color == "red":
         if ship.silent == True:
@@ -274,7 +274,7 @@ def hitButton(color):
             ship.silent = True
             ship.silentHud.toFront()
             ship.silentHud.visible = True
-        print(ship.silent)
+        
 
     elif color == "yellow":
         if app.sonar == True:
@@ -282,7 +282,7 @@ def hitButton(color):
 
         elif app.sonar == False:
             app.sonar = True
-        print(app.sonar)
+        
 
 
 def sonarMove():
@@ -311,9 +311,9 @@ blackscreen = Rect(0,0,400,400,fill="black",opacity=50,visible=False)
 def onMousePress(mouseX,mouseY):
     for button in buttons:
         if button.hits(mouseX,mouseY):
-            print(button.fill," hit!")
+            
             hitButton(button.thing)
-    print(mouseX,mouseY)
+    
     
 
 
