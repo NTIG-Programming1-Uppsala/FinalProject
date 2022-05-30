@@ -56,6 +56,8 @@ app.hudtimer = 100
 hud = [speed,jump_hud]
 app.counter3 = 0
 
+
+
 for hu in hud:
     hu.time = 0
     hu.visible = False

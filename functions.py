@@ -24,6 +24,29 @@ def deathCond():
         if distance(enemy.centerX, enemy.centerY, 200,230) < 30:
             Rect(0,0,400,400)
             Label("you died, use the sonar to stay hidden(press the yellow button)",200,200,size=14,fill="white")
+            
+            deathcounter = 99
+            newdeath = 99
+            with open("deathcounter.txt") as f:
+                deathcounter = int(f.readline())
+                #deathcounter = int(f.readline())
+                
+            
+            
+            with open("deathcounter.txt","w") as f:
+                f.write(str(deathcounter+1))
+                #deathcounter = int(f.readline())
+                newdeath = f.write(str(deathcounter+1))
+
+                
+
+
+            
+            
+            
+            Label("You have died: "+str(newdeath)+" times",200,230,size=14,fill="white")
+
+            
             app.stop()
 
 def winCond():
