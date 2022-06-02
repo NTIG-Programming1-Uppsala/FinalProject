@@ -41,5 +41,5 @@ makeDot(850,200,"enemy1")
 
 #enemySpawn(270,200,"enemy1")
 
-
+clear_console()
 cmu_graphics.run()
