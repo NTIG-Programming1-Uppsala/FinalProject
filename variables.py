@@ -88,7 +88,7 @@ player_text.centerX = player_square.centerX
 player.add(player_square, player_text)
 player.dy = 0
 player.dx = 0
-player.speed = 1
+player.speed = 2
 player.floor = False
 player.jump = 5
 player.jumpPower = 2

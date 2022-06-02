@@ -10,7 +10,7 @@ def nearDeathAnimation():
     
     if app.c.yes:
         
-        if app.c.left < 410:
+        if app.c.left <= 400:
             app.c.centerX += 10
             app.c.toFront()
         
@@ -20,7 +20,8 @@ def nearDeathAnimationStart(bool):
     
     if bool == True:
         app.c.yes = True
-    else:
+    elif bool == False:
+        app.c.yes = False
         app.c.right = 0
 
 
