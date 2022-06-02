@@ -225,7 +225,9 @@ def onKeyPress(key):
         enemySpawn(270,170,"enemy1")
         
     
-        
+def gpsUpdate():
+    if app.sonar:
+            print("distance from safehouse: ",distance(win.centerX, win.centerY, player.centerX, player.centerY))
 
 
 def onKeyHold(keys):
@@ -233,23 +235,19 @@ def onKeyHold(keys):
     if "right" in keys:
         if player.dx < app.limit:
             player.dx += player.speed
-        if app.sonar:
-            print("distance from safehouse: ",distance(win.centerX, win.centerY, player.centerX, player.centerY))
+        gpsUpdate()
             
     if "left" in keys:
         if player.dx > -app.limit:
             player.dx -= player.speed
-        if app.sonar:
-            print("distance from safehouse: ",distance(win.centerX, win.centerY, player.centerX, player.centerY))
+        gpsUpdate()
         
     if "up" in keys:
         player.dy -= player.speed
-        if app.sonar:
-            print("distance from safehouse: ",distance(win.centerX, win.centerY, player.centerX, player.centerY))
+        gpsUpdate()
     
     if "down" in keys:
-        if app.sonar:
-            print("distance from safehouse: ",distance(win.centerX, win.centerY, player.centerX, player.centerY))
+        gpsUpdate()
         player.dy += player.speed
     if "x" in keys:
         itemPickup()

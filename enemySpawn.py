@@ -2,12 +2,12 @@ from cmu_graphics import *
 from functions import *
 from variables import *
 from animation import *
-
+enemytimer = 30
 
 def enemySpawn(x,y,enemyName):
     for enemy in enemies:
         if enemy.name == enemyName:
-            enemy.timer = 100
+            enemy.timer = enemytimer
             enemy.centerX = x
             enemy.centerY = y
             enemy.active = True
@@ -26,7 +26,7 @@ def enemyBehav():
 
     for enemy in enemies:
         if enemy.behav == "agressive":
-                enemySpeed = 50
+                enemySpeed = 90
 
                 if enemy.centerX > 200:
                     enemy.centerX += enemySpeed
@@ -68,7 +68,7 @@ def enemyBehav():
                 if distance(enemy.centerX, enemy.centerY, 200,230) > 146:
                     enemy.active = False
                     enemy.centerY = 500
-                    enemy.timer = 100
+                    enemy.timer = enemytimer
                     nearDeathAnimationStart(True)
                 elif enemy.behav == "passive":
                     enemy.centerY += 1
